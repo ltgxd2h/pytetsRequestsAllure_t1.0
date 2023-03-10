@@ -10,11 +10,6 @@ url = get_sitting['host']['api_url_test1']
 headers = {'accept': 'application/json, text/javascript, */*; q=0.01',
            'accept-language': 'zh-CN,zh;q=0.9',}
 
-# def test_one(get_token):
-#     t = get_token
-#     print(t)
-
-
 @allure.epic("项目模块")
 @allure.feature("客户账单管理")
 class TestClientBillManage():
@@ -47,8 +42,6 @@ class TestClientBillManage():
         assert result['errorMsg'] == '操作成功'
         if status == 'null':
             assert result['data']['total'] == getmysql.queryCustomerCostRecord(989527231799119914)['num']
-
-        # print(result)
 
 if __name__ == '__main__':
     pytest.main(['-vs','test_on.py'])
